@@ -2,7 +2,7 @@
 
 function checkNumber(){
 
-var attempt=0; 
+var attempt=0;
 
 function generateRandomAnswer(){
 
@@ -33,6 +33,8 @@ var msg=document.getElementById("msg");
 var results= document.getElementById("results");
 
 console.log(userInput);
+
+
 
 
 if (!attempt) {
@@ -79,7 +81,7 @@ for(let i=0;i < userInput.length ; i++)
 	{
 		html=html + '<i class="fa fa-exchange text-warning" style="padding:3px;" ></i>'
 
-	} 
+	}
 	else{
 		html=html + '<i class="fa fa-times text-danger" style="padding:3px;"></i>'
 	}
@@ -99,12 +101,14 @@ if(correctDigit== userInput.length)
 	document.getElementById("btn-guess").style= "display:none;";
 	document.getElementById("btn-replay").style= "display:block;";
 }
-	
+
 else if(attempt >= 10) {
 
 	msg.innerHTML="<p class = 'msg-danger'> You Lost, Please try Again!</p>";
+	document.getElementById('lost-msg').innerHTML="<p>Correct Answer Was: </p>" + answer;
 	document.getElementById("btn-guess").style= "display:none;";
 	document.getElementById("btn-replay").style= "display:block;";
+
 
 }
 else{
@@ -119,8 +123,3 @@ else{
 
 
 }
-
-
-
-
-
